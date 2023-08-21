@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_client/shared/exports/exports.dart';
-import 'package:whatsapp_client/shared/widgets/texting_area.dart';
+import 'package:whatsapp_client/shared/widgets/encrypt_message.dart';
+import 'package:whatsapp_client/shared/widgets/message_type.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -12,12 +13,12 @@ class ChatScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(Images.bgImage),
-            fit: BoxFit.cover,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(Images.bgImage),
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
           child: Column(
             children: [
               ChatTop(
@@ -27,8 +28,24 @@ class ChatScreen extends StatelessWidget {
                 phonecall: () {},
                 videocall: () {},
               ),
-              Container(
-                
+              SizedBox(
+                height: height * 0.763,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: height * 0.03,
+                    ),
+                    const TimingCard(timing: 'Today',),
+                    SizedBox(
+                      height: height * 0.02,
+                    ),
+                    const EncryptMessage(),
+                    SizedBox(
+                      height: height * 0.02,
+                    ),
+                    const MessageType()
+                  ],
+                ),
               ),
               Container(
                 color: Palette.background,

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whatsapp_client/shared/constants/constants.dart';
 
 class TextingArea extends StatelessWidget {
   //final TextEditingController chatController;
@@ -17,73 +18,71 @@ class TextingArea extends StatelessWidget {
     final double width = MediaQuery.of(context).size.width;
     final double height = MediaQuery.of(context).size.height;
 
-    return Container(
-      height: height * 0.1,
-      color: Colors.transparent,
+    return SizedBox(
+      height: height * 0.115,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Container(
-          decoration: BoxDecoration(
-            color: const Color.fromARGB(55, 148, 196, 236),
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Row(
               children: [
                 InkWell(
                   onTap: () {},
-                  child: Container(
-                    width: width * 0.11,
-                    height: height * 0.055,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(99, 155, 39, 176),
-                      borderRadius: BorderRadius.circular(22),
-                    ),
-                    child: const Center(
-                      child: Icon(
-                        CupertinoIcons.mic,
-                        color: Colors.purple,
-                        size: 22,
+                  child: const Icon(
+                    CupertinoIcons.add,
+                    color: Palette.iconColor,
+                    size: 22,
+                  ),
+                ),
+                SizedBox(
+                  width: width * 0.03,
+                ),
+                Expanded(
+                  child: SizedBox(
+                    height: height * 0.05,
+                    child: TextField(
+                      //controller: chatController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                            borderSide: BorderSide.none),
+                        filled: true,
+                        fillColor: Colors.white,
+                        suffixIcon: const Icon(
+                          CupertinoIcons.add_circled,
+                          color: Palette.iconColor,
+                          size: 22,
+                        ),
                       ),
                     ),
                   ),
                 ),
-                Expanded(
-                  child: TextField(
-                    //controller: chatController,
-                    decoration: const InputDecoration(
-                      contentPadding: EdgeInsets.all(12),
-                      hintText: 'Type Message here',
-                      hintStyle: TextStyle(
-                          color: Color.fromARGB(96, 2, 0, 3),
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400),
-                      border: InputBorder.none,
-                    ),
-                  ),
+                SizedBox(
+                  width: width * 0.04,
                 ),
                 InkWell(
                   onTap: sendOnpressed,
-                  child: Container(
-                    width: width * 0.10,
-                    height: height * 0.055,
-                    decoration: BoxDecoration(
-                      color:  const Color.fromARGB(88, 33, 149, 243),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: const Center(
-                      child: Icon(
-                        Icons.send,
-                        color: Colors.blue,
-                        size: 20,
-                      ),
-                    ),
+                  child: const Icon(
+                    CupertinoIcons.camera,
+                    color: Palette.iconColor,
+                    size: 20,
+                  ),
+                ),
+                SizedBox(
+                  width: width * 0.04,
+                ),
+                InkWell(
+                  onTap: sendOnpressed,
+                  child: const Icon(
+                    CupertinoIcons.mic,
+                    color: Palette.iconColor,
+                    size: 20,
                   ),
                 ),
               ],
             ),
-          ),
+          ],
         ),
       ),
     );
