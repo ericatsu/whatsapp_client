@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_client/shared/constants/constants.dart';
 
 class TextingArea extends StatelessWidget {
-  //final TextEditingController chatController;
+  final TextEditingController chatController;
   final VoidCallback cameraOnpressed;
   final VoidCallback sendOnpressed;
 
   const TextingArea(
       {super.key,
-      //required this.chatController,
+      required this.chatController,
       required this.cameraOnpressed,
       required this.sendOnpressed});
 
@@ -42,7 +42,7 @@ class TextingArea extends StatelessWidget {
                   child: SizedBox(
                     height: height * 0.05,
                     child: TextField(
-                      //controller: chatController,
+                      controller: chatController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0),

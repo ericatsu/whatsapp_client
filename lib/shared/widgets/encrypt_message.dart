@@ -9,7 +9,7 @@ class EncryptMessage extends StatelessWidget {
     final double width = MediaQuery.of(context).size.width;
     return Container(
       width: width * 0.76,
-      color: const Color(0xFFFFF3BF),
+      color: Palette.goldColor ,
       child: const Center(
         child: Padding(
           padding: EdgeInsets.all(8.0),

@@ -12,6 +12,7 @@ class Palette {
   static const Color secondary = Color(0xFFEBD4D7);
   static const Color sectext = Color(0xFF898989);
   static const Color iconColor = Color(0xFF007AFF);
+static const Color goldColor = Color(0xFFFFF3BF);
 }
 
 const encryMessage = "🔒 Messages to this chat and calls are now secured with end-to-end encryption. X&Z Courier may use another company to store, read, and respond to your messages and calls. Tap to learn more.";
