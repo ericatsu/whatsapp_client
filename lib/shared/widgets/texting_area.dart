@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ChaTTextField extends StatelessWidget {
-  final TextEditingController chatController;
+class TextingArea extends StatelessWidget {
+  //final TextEditingController chatController;
   final VoidCallback cameraOnpressed;
   final VoidCallback sendOnpressed;
 
-  const ChaTTextField(
+  const TextingArea(
       {super.key,
-      required this.chatController,
+      //required this.chatController,
       required this.cameraOnpressed,
       required this.sendOnpressed});
 
@@ -51,7 +51,7 @@ class ChaTTextField extends StatelessWidget {
                 ),
                 Expanded(
                   child: TextField(
-                    controller: chatController,
+                    //controller: chatController,
                     decoration: const InputDecoration(
                       contentPadding: EdgeInsets.all(12),
                       hintText: 'Type Message here',
